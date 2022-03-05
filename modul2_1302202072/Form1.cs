@@ -16,6 +16,7 @@ namespace modul2_1302202072
         double val = 0;
         string ops = "";
         bool op_pressed = false;
+        bool eq_pressed = false;
 
 
         public Form1()
@@ -28,7 +29,15 @@ namespace modul2_1302202072
             Button b = (Button)sender;
             ops = b.Text;
             val = Double.Parse(hasil.Text);
-
+            if (val != 0 && !eq_pressed)
+            {
+                switch (ops)
+                {
+                    case "+":
+                        val = (val + Double.Parse(hasil.Text));
+                        break;
+                }
+            }
             op_pressed = true;
 
         }
@@ -102,8 +111,9 @@ namespace modul2_1302202072
             switch (ops)
             {
                 case "+":
-                    hasil.Text = (val + double.Parse(hasil.Text)).ToString();
-                    op_pressed = true;  
+                    hasil.Text = (val + Double.Parse(hasil.Text)).ToString();
+                    op_pressed = true;
+                    eq_pressed = true;
                     break;
             }
         }
