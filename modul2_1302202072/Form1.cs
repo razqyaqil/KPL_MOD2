@@ -114,6 +114,7 @@ namespace modul2_1302202072
                     hasil.Text = (val + Double.Parse(hasil.Text)).ToString();
                     op_pressed = true;
                     eq_pressed = true;
+                    val = 0;    
                     break;
             }
         }
