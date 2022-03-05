@@ -12,14 +12,103 @@ namespace modul2_1302202072
 {
     public partial class Form1 : Form
     {
+
+        double val = 0;
+        string ops = "";
+        bool op_pressed = false;
+
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void operator_click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            ops = b.Text;
+            val = Double.Parse(hasil.Text);
+
+            op_pressed = true;
+
+        }
+
+        private void btn_click(object sender, EventArgs e)
         {
 
+            if ((hasil.Text == "0") || (op_pressed))
+            {
+                hasil.Clear();
+            }
+
+            Button b = (Button)sender;
+            hasil.Text = hasil.Text + b.Text;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            btn_click(sender,e);    
+
+        }
+
+        private void button0_Click(object sender, EventArgs e)
+        {
+            btn_click(sender, e);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            btn_click(sender, e);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            btn_click(sender, e);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            btn_click(sender, e);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            btn_click(sender, e);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            btn_click(sender, e);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            btn_click(sender, e);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            btn_click(sender, e);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            btn_click(sender, e);
+        }
+
+        private void BtEqual_Click(object sender, EventArgs e)
+        {
+            switch (ops)
+            {
+                case "+":
+                    hasil.Text = (val + double.Parse(hasil.Text)).ToString();
+                    break;
+            }
+        }
+
+        private void BtPlus_Click(object sender, EventArgs e)
+        {
+            operator_click(sender, e); 
         }
     }
 }
