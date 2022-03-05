@@ -38,6 +38,7 @@ namespace modul2_1302202072
 
             if ((hasil.Text == "0") || (op_pressed))
             {
+                op_pressed=false;   
                 hasil.Clear();
             }
 
@@ -102,6 +103,7 @@ namespace modul2_1302202072
             {
                 case "+":
                     hasil.Text = (val + double.Parse(hasil.Text)).ToString();
+                    op_pressed = true;  
                     break;
             }
         }
